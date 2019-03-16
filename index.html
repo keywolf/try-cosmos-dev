@@ -119,7 +119,7 @@ ga('send', 'pageview');
 <p>不妨设想一下，如果让你来设计这样一套开发工具，你会怎么设计？很显然，第一步需要先把所有链都要用到的功能抽象出来。就像你要帮助别人组装一台电脑，需要先搞清电脑都有 CPU、内存以及显示器这些东西一样。</p>
 <p>那么问题来了，一条链的必要组成部分都包括哪些呢？</p>
 <p>Cosmos 团队认为可以这样划分：</p>
-<p><img src="../images/cosmos-architecture-1.jpg" alt></p>
+<p><img src="/images/cosmos-architecture-1.jpg" alt></p>
 <ul>
 <li>网络层：用来确保，在一个点对点的网络里，每个节点都能接收和传输一笔交易；</li>
 <li>共识层：用来确保每个节点选出同一笔交易，这个交易将被允许对节点的状态进行修改。在比特币里面，所谓“状态”就是一系列账户的余额（虽然是 UTXO 模型，但为了简化理解，我们可以这样认为），矿工们就一笔交易达成共识，如果有效，这笔交易就会修改所有账户的余额；</li>
@@ -147,7 +147,7 @@ ga('send', 'pageview');
 <h2 id="ABCI-协议"><a href="#ABCI-协议" class="headerlink" title="ABCI 协议"></a>ABCI 协议</h2><p><a href="https://github.com/tendermint/tendermint/tree/master/abci">GitHub</a></p>
 <p>有了 Tendermint Core 这个神器，你就可以在上面搭建各种各样的链了，不管是公链、联盟链还是私有链。</p>
 <p>之所以能做到这一点，是因为 Tendermint Core 是不知道上面应用层具体是什么样的，它不关心应用层的实现。Tendermint 把许多无关的细节都忽略了，只抽象出关键的东西，做成通用的接口。这个接口就叫 ABCI 协议，<strong>用来连接应用层和 Tendermint Core 之间的通信</strong>。</p>
-<p><img src="../images/cosmos-architecture-2.jpg" alt></p>
+<p><img src="/images/cosmos-architecture-2.jpg" alt></p>
 <p>ABCI 协议是一个 Socket 协议，不管你使用哪一种编程语言、运行在什么样的编程环境下，只要你符合这个协议的标准，应用层和 Tendermint Core 就能通信。Cosmos 官方已经实现了一个 ABCI 协议的版本，名叫 Tendermint Socket Protocol (TSP, or Teaspoon)，当然你也可以实现自己的版本。</p>
 <p>ABCI 协议包括几种不同的消息类型。Tendermint Core 会创建 3 个 ABCI 连接到应用层：</p>
 <ul>
@@ -156,16 +156,16 @@ ga('send', 'pageview');
 <li>最后一个用来查询应用层的状态；</li>
 </ul>
 <p>以太坊的 Solidity ，以及 Java、C++、Python、Go 这些语言都可以用来写出确定性的区块链交易处理逻辑。需要注意的是，区块的处理必须是即时确定的，不能是像比特币 POW 那种概率性确定，否则 Tendermint Core 达不成共识。POS 和 POA（Proof of Authority）共识算法都是即时确定的。</p>
-<h2 id="Cosmos-SDK"><a href="#Cosmos-SDK" class="headerlink" title="Cosmos SDK"></a>Cosmos SDK</h2><p><img src="../images/cosmos-architecture-5.png" alt></p>
+<h2 id="Cosmos-SDK"><a href="#Cosmos-SDK" class="headerlink" title="Cosmos SDK"></a>Cosmos SDK</h2><p><img src="/images/cosmos-architecture-5.png" alt></p>
 <p><a href="https://github.com/cosmos/cosmos-sdk/">GitHub</a></p>
 <p><a href="https://cosmos.network/ecosystem">Cosmos Ecosystem</a></p>
 <p>到这一步，Cosmos 把开发一条公链的工作减少为设计一个应用层的工作。但 Cosmos 并没有就此打住，它继续「切分」应用层。</p>
 <p>应用层需要实现一系列的功能来完成最终的业务逻辑，不过这些功能中有很多是可以通用的，比如账户管理的功能，Cosmos 把这些功能分解出来，再以模块化的方式加以实现。</p>
 <p>这样一来，开发者在进行应用层开发时，只需要实现自身业务逻辑中特殊的功能，其他的功能都可以直接调用 Cosmos 的功能模块。</p>
-<p><img src="../images/cosmos-architecture-3.jpg" alt></p>
+<p><img src="/images/cosmos-architecture-3.jpg" alt></p>
 <p>如上图所示，Accounts（账户系统）、Governance（治理机制）、Staking（抵押机制）、Slashing（惩罚机制）、IBC（跨链功能）、Rewards&amp;Fees（奖励&amp;手续费）等均是功能模块，能够以「插拔」的方式被组合到一起使用。</p>
 <p>Cosmos 把自己提供的这一模块化开发工具叫做「Cosmos SDK」，它覆盖了应用层需要实现的大部分的功能，到这一步，Cosmos 把设计一个应用层的工作减少为实现少数具体的功能模块的工作。Cosmos 团队自己也利用这套 SDK 实现了一个例子叫 Cosmos Hub。</p>
-<p><img src="../images/cosmos-architecture-4.png" alt></p>
+<p><img src="/images/cosmos-architecture-4.png" alt></p>
 <p>最终，如上图所示，通过对公链的分层设计以及对应用层的分模块设计，开发者能够以 Tendermint 共识引擎和 Cosmos SDK 开发工具为基础，快速地完成公链的开发。他们不再需要设计整条公链，而只需要实现核心的业务功能。</p>
 <p>正因为这样，币安可以在较短的时间内迅速基于 Cosmos 的开发工具和共识引擎，开发完成应用方向非常聚焦的 <a href="https://github.com/binance-chain">Binance Chain</a>。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总结来说，Cosmos 希望通过 Cosmos SDK 和 Tendermint 等工具，让开发者以一种模块化、标准化、可插拔的方式（这种方式其实也是现代软件开发积累下来的大量成熟的开发技术经验），快速降低一条链的开发成本。让每个人都可以轻松拥有自己的链之后，Cosmos 再通过 IBC 跨链协议和 Cosmos Hub 与 Zone 所组成的生态系统，为这些不同的链提供互相连接的能力，最终组成一个大网络。</p>
@@ -179,7 +179,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/16/cosmos-architecture/" data-id="cjtbhr5it0002n1cesh2oqmc7" class="article-share-link">Share</a>
+      <a data-url="https://trycosmos.dev/2019/03/16/cosmos-architecture/" data-id="cjtbi20il0002tccepmie6pn0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cosmos-Architecture/">Cosmos Architecture</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
@@ -230,7 +230,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtbhr5i80000n1ceahlcxfsf" class="article-share-link">Share</a>
+      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtbi20i70001tcce0t76v8e7" class="article-share-link">Share</a>
       
       
     </footer>
