@@ -3,23 +3,38 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-48537588-4', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
-  <title>Hello Cosmos | Try Cosmos Dev</title>
+  <title>Hello Cosmos | Try Cosmos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随">
+<meta name="keywords" content="Cosmos, Cosmos SDK, Tendermint, Tendermint Core, Blockchain Development Tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello Cosmos">
 <meta property="og:url" content="https://trycosmos.dev/2019/03/14/hello-cosmos/index.html">
-<meta property="og:site_name" content="Try Cosmos Dev">
+<meta property="og:site_name" content="Try Cosmos">
 <meta property="og:description" content="据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-15T02:24:12.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello Cosmos">
 <meta name="twitter:description" content="据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随">
+<meta name="twitter:creator" content="@B1u3W01f">
   
-    <link rel="alternate" href="/atom.xml" title="Try Cosmos Dev" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Try Cosmos" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -38,8 +53,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Try Cosmos Dev</a>
+        <a href="/" id="logo">Try Cosmos</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">动手写条自己的链</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -49,6 +68,8 @@
           <a class="main-nav-link" href="/">Home</a>
         
           <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/aboutme">About</a>
         
       </nav>
       <nav id="sub-nav">
@@ -87,29 +108,43 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随着 Cosmos 主网正式启动，Cosmos Hub 和 IRISnet Hub 将完成 Cosmos 跨链生态中的双 Hub 链接。</p>
-<h2 id="0x00-What-is-Cosmos"><a href="#0x00-What-is-Cosmos" class="headerlink" title="0x00 What is Cosmos"></a>0x00 What is Cosmos</h2><p><a href="https://cosmos.network/intro" target="_blank" rel="noopener">官方介绍</a></p>
+<h2 id="0x00-What-is-Cosmos"><a href="#0x00-What-is-Cosmos" class="headerlink" title="0x00 What is Cosmos"></a>0x00 What is Cosmos</h2><p><a href="https://cosmos.network/intro">官方介绍</a></p>
 <p>调皮一下：「cosmos」这个单词的本意是「宇宙」的意思 :)</p>
 <h2 id="0x01-科普"><a href="#0x01-科普" class="headerlink" title="0x01 科普"></a>0x01 科普</h2><ul>
-<li>2019/03/14 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg" target="_blank" rel="noopener">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ" target="_blank" rel="noopener">Cosmos 的前世今生、未来前景和投资价值</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg" target="_blank" rel="noopener">写在跨链项目Cosmos上线前夜</a></li>
+<li>2019/03/14 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
+<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ">Cosmos 的前世今生、未来前景和投资价值</a></li>
+<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg">写在跨链项目Cosmos上线前夜</a></li>
 </ul>
 <h2 id="0x02-Coding"><a href="#0x02-Coding" class="headerlink" title="0x02 Coding"></a>0x02 Coding</h2><ul>
-<li><a href="https://cosmos.network/developers" target="_blank" rel="noopener">Developer Portal</a></li>
-<li><a href="https://cosmos.network/docs/" target="_blank" rel="noopener">Cosmos SDK Documentation</a></li>
-<li><a href="https://tendermint.com/docs/" target="_blank" rel="noopener">Tendermint Core Documentation</a></li>
+<li><a href="https://cosmos.network/developers">Developer Portal</a></li>
+<li><a href="https://cosmos.network/docs/">Cosmos SDK Documentation</a></li>
+<li><a href="https://tendermint.com/docs/">Tendermint Core Documentation</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjt9gdma80000yfcei79tib94" class="article-share-link">Share</a>
+      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtbhr5i80000n1ceahlcxfsf" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/03/16/cosmos-architecture/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          动手写条自己的链(1)：Cosmos 技术架构解析
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -121,9 +156,14 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cosmos-Architecture/">Cosmos Architecture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
+    </div>
+  </div>
 
-  
-    
+
   
     
   <div class="widget-wrap">
@@ -140,6 +180,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/03/16/cosmos-architecture/">动手写条自己的链(1)：Cosmos 技术架构解析</a>
+          </li>
         
           <li>
             <a href="/2019/03/14/hello-cosmos/">Hello Cosmos</a>
@@ -168,6 +212,8 @@
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">About</a>
   
 </nav>
     

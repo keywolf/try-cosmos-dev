@@ -18,19 +18,26 @@ ga('send', 'pageview');
 
 
   
-  <title>Try Cosmos</title>
+  <title>动手写条自己的链(1)：Cosmos 技术架构解析 | Try Cosmos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Try Cosmos SDK &amp; Tendermint Core">
-<meta name="keywords" content="Cosmos, Cosmos SDK, Tendermint, Tendermint Core, Blockchain Development Tutorial">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Try Cosmos">
-<meta property="og:url" content="https://trycosmos.dev/index.html">
+  <meta name="description" content="本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。 Cosmos 在 3 月 14 日的早 7:00 成功启动了主网，它是以伯克利的 Tendermint 团队为核心团队开发的跨链项目，目标要实现两件事情：第一件，是让公链开发变得简单；第二件，是让所有的链能够连接起来。 Cosmos 的起源：Tendermint在技术发展早">
+<meta name="keywords" content="Try Cosmos,Cosmos Architecture">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动手写条自己的链(1)：Cosmos 技术架构解析">
+<meta property="og:url" content="https://trycosmos.dev/2019/03/16/cosmos-architecture/index.html">
 <meta property="og:site_name" content="Try Cosmos">
-<meta property="og:description" content="Try Cosmos SDK &amp; Tendermint Core">
+<meta property="og:description" content="本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。 Cosmos 在 3 月 14 日的早 7:00 成功启动了主网，它是以伯克利的 Tendermint 团队为核心团队开发的跨链项目，目标要实现两件事情：第一件，是让公链开发变得简单；第二件，是让所有的链能够连接起来。 Cosmos 的起源：Tendermint在技术发展早">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-1.jpg">
+<meta property="og:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-2.jpg">
+<meta property="og:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-5.png">
+<meta property="og:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-3.jpg">
+<meta property="og:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-4.png">
+<meta property="og:updated_time" content="2019-03-16T12:49:44.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Try Cosmos">
-<meta name="twitter:description" content="Try Cosmos SDK &amp; Tendermint Core">
+<meta name="twitter:title" content="动手写条自己的链(1)：Cosmos 技术架构解析">
+<meta name="twitter:description" content="本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。 Cosmos 在 3 月 14 日的早 7:00 成功启动了主网，它是以伯克利的 Tendermint 团队为核心团队开发的跨链项目，目标要实现两件事情：第一件，是让公链开发变得简单；第二件，是让所有的链能够连接起来。 Cosmos 的起源：Tendermint在技术发展早">
+<meta name="twitter:image" content="https://trycosmos.dev/2019/03/16/images/cosmos-architecture-1.jpg">
 <meta name="twitter:creator" content="@B1u3W01f">
   
     <link rel="alternate" href="/atom.xml" title="Try Cosmos" type="application/atom+xml">
@@ -84,9 +91,7 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-cosmos-architecture" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-cosmos-architecture" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/16/cosmos-architecture/" class="article-date">
   <time datetime="2019-03-16T08:59:53.000Z" itemprop="datePublished">2019-03-16</time>
@@ -99,8 +104,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/cosmos-architecture/">动手写条自己的链(1)：Cosmos 技术架构解析</a>
+    <h1 class="article-title" itemprop="name">
+      动手写条自己的链(1)：Cosmos 技术架构解析
     </h1>
   
 
@@ -187,60 +192,19 @@ ga('send', 'pageview');
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-cosmos" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/14/hello-cosmos/" class="article-date">
-  <time datetime="2019-03-14T15:24:07.733Z" itemprop="datePublished">2019-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/hello-cosmos/">Hello Cosmos</a>
-    </h1>
+    <a href="/2019/03/14/hello-cosmos/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello Cosmos</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随着 Cosmos 主网正式启动，Cosmos Hub 和 IRISnet Hub 将完成 Cosmos 跨链生态中的双 Hub 链接。</p>
-<h2 id="0x00-What-is-Cosmos"><a href="#0x00-What-is-Cosmos" class="headerlink" title="0x00 What is Cosmos"></a>0x00 What is Cosmos</h2><p><a href="https://cosmos.network/intro">官方介绍</a></p>
-<p>调皮一下：「cosmos」这个单词的本意是「宇宙」的意思 :)</p>
-<h2 id="0x01-科普"><a href="#0x01-科普" class="headerlink" title="0x01 科普"></a>0x01 科普</h2><ul>
-<li>2019/03/14 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ">Cosmos 的前世今生、未来前景和投资价值</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg">写在跨链项目Cosmos上线前夜</a></li>
-</ul>
-<h2 id="0x02-Coding"><a href="#0x02-Coding" class="headerlink" title="0x02 Coding"></a>0x02 Coding</h2><ul>
-<li><a href="https://cosmos.network/developers">Developer Portal</a></li>
-<li><a href="https://cosmos.network/docs/">Cosmos SDK Documentation</a></li>
-<li><a href="https://tendermint.com/docs/">Tendermint Core Documentation</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtbhr5i80000n1ceahlcxfsf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         

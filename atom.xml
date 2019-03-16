@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Try Cosmos Dev</title>
+  <title>Try Cosmos</title>
   
-  
+  <subtitle>动手写条自己的链</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://trycosmos.dev/"/>
-  <updated>2019-03-15T02:24:12.237Z</updated>
+  <updated>2019-03-16T12:49:44.230Z</updated>
   <id>https://trycosmos.dev/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动手写条自己的链(1)：Cosmos 技术架构解析</title>
+    <link href="https://trycosmos.dev/2019/03/16/cosmos-architecture/"/>
+    <id>https://trycosmos.dev/2019/03/16/cosmos-architecture/</id>
+    <published>2019-03-16T08:59:53.000Z</published>
+    <updated>2019-03-16T12:49:44.230Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Try Cosmos" scheme="https://trycosmos.dev/tags/Try-Cosmos/"/>
+    
+      <category term="Cosmos Architecture" scheme="https://trycosmos.dev/tags/Cosmos-Architecture/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello Cosmos</title>
