@@ -108,7 +108,12 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。</p>
+        <p><a href="/tags/Try-Cosmos/">动手写条自己的链</a> 系列文章：</p>
+<ol>
+<li><a href="/2019/03/14/hello-cosmos/">Hello Cosmos</a></li>
+<li><a href="/2019/03/16/cosmos-architecture/">Cosmos 技术架构解析</a></li>
+</ol>
+<p>本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。</p>
 <p><a href="https://cosmos.network/">Cosmos</a> 在 3 月 14 日的早 7:00 <a href="https://cosmos.network/launch">成功启动了主网</a>，它是以伯克利的 <a href="https://tendermint.com/">Tendermint</a> 团队为核心团队开发的跨链项目，目标要实现两件事情：第一件，是让公链开发变得简单；第二件，是让所有的链能够连接起来。</p>
 <h2 id="Cosmos-的起源：Tendermint"><a href="#Cosmos-的起源：Tendermint" class="headerlink" title="Cosmos 的起源：Tendermint"></a>Cosmos 的起源：Tendermint</h2><p>在技术发展早期，人们对如何开发一个去中心化的公共账本并不会有太多的认识和思考。比特币和以太坊的设计就像一块单片电路板，上面所有的元件都集成在一起，其中的逻辑错综复杂，没有任何分层的技术栈可言。如果你写过代码的话就会知道，解耦是设计复杂系统的第一要义。只有把各个功能分开，把一个系统拆解成干净的层级、模块和接口，代码才能复用，以及更好的做修改，为未来留下灵活的扩展空间。</p>
 <p>比特币和以太坊就像一台整体焊死的电脑，你很难对他进行改动，里面的零件也没法拔出来做升级。当人们对公链有各种各样完全不同的想法之后，人们发现把所有东西都做在一条链上是不对的，于是很多人开始想开发自己的链。这个时候你会发现，即使比特币和以太坊开源了，你也很难进行代码的复用。除了把比特币代码拷过来，改个参数，换个名称，弄出来一个山寨币之外，做不了太多事情。</p>
@@ -169,8 +174,8 @@ ga('send', 'pageview');
 <p>最终，如上图所示，通过对公链的分层设计以及对应用层的分模块设计，开发者能够以 Tendermint 共识引擎和 Cosmos SDK 开发工具为基础，快速地完成公链的开发。他们不再需要设计整条公链，而只需要实现核心的业务功能。</p>
 <p>正因为这样，币安可以在较短的时间内迅速基于 Cosmos 的开发工具和共识引擎，开发完成应用方向非常聚焦的 <a href="https://github.com/binance-chain">Binance Chain</a>。</p>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总结来说，Cosmos 希望通过 Cosmos SDK 和 Tendermint 等工具，让开发者以一种模块化、标准化、可插拔的方式（这种方式其实也是现代软件开发积累下来的大量成熟的开发技术经验），快速降低一条链的开发成本。让每个人都可以轻松拥有自己的链之后，Cosmos 再通过 IBC 跨链协议和 Cosmos Hub 与 Zone 所组成的生态系统，为这些不同的链提供互相连接的能力，最终组成一个大网络。</p>
-<p>Cosmos 认为，现在大多数开发者倾向于在以太坊上开发智能合约，而不愿意开发自己的链，主要是因为开发一条链的难度太高了。但随着 Tendermint 的普及，开发一条链的成本会变的像开发一个智能合约一样简单。</p>
-<p>Cosmos 关于区块链和生态的理解非常有意思，Cosmos 坚信「每个人都应该拥有一条链」，想知道为什么吗？推荐阅读下面橙皮书的文章，在末尾有橙皮书和 Cosmos 创始人 Jae Kwon 及核心技术开发团队进行的访谈。</p>
+<p>Cosmos 认为，现在大多数开发者倾向于在以太坊上开发智能合约，而不愿意开发自己的链，主要是因为开发一条链的难度太高了。但随着 Cosmos SDK 和 Tendermint 的普及，开发一条链的成本会变的像开发一个智能合约一样简单。</p>
+<p>最后，Cosmos 关于区块链和生态的理解非常有意思，Cosmos 团队坚信「每个人都应该拥有一条链」，想知道为什么吗？推荐阅读下面橙皮书的文章，在末尾有橙皮书和 Cosmos 创始人 Jae Kwon 及核心技术开发团队进行的访谈。</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li>橙皮书 <a href="https://orange.xyz/p/210">对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？</a></li>
 <li>李画 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
@@ -179,7 +184,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/16/cosmos-architecture/" data-id="cjtbi20il0002tccepmie6pn0" class="article-share-link">Share</a>
+      <a data-url="https://trycosmos.dev/2019/03/16/cosmos-architecture/" data-id="cjtcqjji60004smceedzyoaf3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cosmos-Architecture/">Cosmos Architecture</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
@@ -194,7 +199,7 @@ ga('send', 'pageview');
     <article id="post-hello-cosmos" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/14/hello-cosmos/" class="article-date">
-  <time datetime="2019-03-14T15:24:07.733Z" itemprop="datePublished">2019-03-14</time>
+  <time datetime="2019-03-14T15:24:07.000Z" itemprop="datePublished">2019-03-14</time>
 </a>
     
   </div>
@@ -213,26 +218,44 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随着 Cosmos 主网正式启动，Cosmos Hub 和 IRISnet Hub 将完成 Cosmos 跨链生态中的双 Hub 链接。</p>
+        <p><a href="/tags/Try-Cosmos/">动手写条自己的链</a> 系列文章：</p>
+<ol>
+<li><a href="/2019/03/14/hello-cosmos/">Hello Cosmos</a></li>
+<li><a href="/2019/03/16/cosmos-architecture/">Cosmos 技术架构解析</a></li>
+</ol>
+<p>据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随着 Cosmos 主网正式启动，Cosmos Hub 和 IRISnet Hub 将完成 Cosmos 跨链生态中的双 Hub 链接。</p>
 <h2 id="0x00-What-is-Cosmos"><a href="#0x00-What-is-Cosmos" class="headerlink" title="0x00 What is Cosmos"></a>0x00 What is Cosmos</h2><p><a href="https://cosmos.network/intro">官方介绍</a></p>
 <p>调皮一下：「cosmos」这个单词的本意是「宇宙」的意思 :)</p>
 <h2 id="0x01-科普"><a href="#0x01-科普" class="headerlink" title="0x01 科普"></a>0x01 科普</h2><ul>
 <li>2019/03/14 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
 <li>2019/03/13 <a href="https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ">Cosmos 的前世今生、未来前景和投资价值</a></li>
 <li>2019/03/13 <a href="https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg">写在跨链项目Cosmos上线前夜</a></li>
+<li>2018/10/10 <a href="https://orange.xyz/p/210">对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？</a></li>
 </ul>
 <h2 id="0x02-Coding"><a href="#0x02-Coding" class="headerlink" title="0x02 Coding"></a>0x02 Coding</h2><ul>
-<li><a href="https://cosmos.network/developers">Developer Portal</a></li>
+<li><a href="https://cosmos.network/developers">Cosmos Developer Portal</a></li>
 <li><a href="https://cosmos.network/docs/">Cosmos SDK Documentation</a></li>
+<li><a href="https://github.com/cosmos/cosmos-sdk/">Cosmos SDK GitHub</a></li>
 <li><a href="https://tendermint.com/docs/">Tendermint Core Documentation</a></li>
+<li><a href="https://github.com/tendermint/tendermint">Tendermint Core GitHub</a></li>
+<li><a href="https://github.com/tendermint/tendermint/tree/master/abci">ABCI GitHub</a></li>
+</ul>
+<h2 id="0x03-应用"><a href="#0x03-应用" class="headerlink" title="0x03 应用"></a>0x03 应用</h2><ul>
+<li>IRISnet：其对 Cosmos SDK 和 IBC 进行了扩展，用以支持公链、联盟链以及传统商业系统之间的集成，使得数据和复杂计算能够跨异构网络互联互通，实现服务的跨链调用</li>
+<li>Binance Chain：币安链，是 Cosmos 上的第一个去中心化交易所平台</li>
+<li>IOV：基于 Cosmos 的第一个分布式区块链 DNS</li>
+<li>Kava：基于 Cosmos 的第一个跨链钱包协议提供者</li>
+<li>其他更多请查看 <a href="https://cosmos.network/ecosystem">Cosmos Ecosystem</a>、<a href="https://tendermint.com/ecosystem">Tendermint Ecosystem</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtbi20i70001tcce0t76v8e7" class="article-share-link">Share</a>
+      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtcqjjhk0000smcexkl6fzai" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
+
     </footer>
   </div>
   

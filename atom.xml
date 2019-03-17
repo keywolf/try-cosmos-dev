@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://trycosmos.dev/"/>
-  <updated>2019-03-16T13:00:45.780Z</updated>
+  <updated>2019-03-17T09:46:02.343Z</updated>
   <id>https://trycosmos.dev/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://trycosmos.dev/2019/03/16/cosmos-architecture/"/>
     <id>https://trycosmos.dev/2019/03/16/cosmos-architecture/</id>
     <published>2019-03-16T08:59:53.000Z</published>
-    <updated>2019-03-16T13:00:45.780Z</updated>
+    <updated>2019-03-17T09:46:02.343Z</updated>
     
     <summary type="html">
     
@@ -46,8 +46,8 @@
     <title>Hello Cosmos</title>
     <link href="https://trycosmos.dev/2019/03/14/hello-cosmos/"/>
     <id>https://trycosmos.dev/2019/03/14/hello-cosmos/</id>
-    <published>2019-03-14T15:24:07.733Z</published>
-    <updated>2019-03-15T02:24:12.237Z</updated>
+    <published>2019-03-14T15:24:07.000Z</published>
+    <updated>2019-03-17T09:45:52.764Z</updated>
     
     <summary type="html">
     
@@ -61,6 +61,8 @@
     
     </summary>
     
+    
+      <category term="Try Cosmos" scheme="https://trycosmos.dev/tags/Try-Cosmos/"/>
     
   </entry>
   
