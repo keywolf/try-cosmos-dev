@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://trycosmos.dev/"/>
-  <updated>2019-03-17T09:46:02.343Z</updated>
+  <updated>2019-03-24T14:12:15.221Z</updated>
   <id>https://trycosmos.dev/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>动手写条自己的链(2)：Cosmos SDK 入门</title>
+    <link href="https://trycosmos.dev/2019/03/24/cosmos-sdk-intro/"/>
+    <id>https://trycosmos.dev/2019/03/24/cosmos-sdk-intro/</id>
+    <published>2019-03-24T07:55:37.000Z</published>
+    <updated>2019-03-24T14:12:15.221Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Try Cosmos" scheme="https://trycosmos.dev/tags/Try-Cosmos/"/>
+    
+      <category term="Cosmos SDK Docs" scheme="https://trycosmos.dev/tags/Cosmos-SDK-Docs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>动手写条自己的链(1)：Cosmos 技术架构解析</title>
     <link href="https://trycosmos.dev/2019/03/16/cosmos-architecture/"/>
     <id>https://trycosmos.dev/2019/03/16/cosmos-architecture/</id>
     <published>2019-03-16T08:59:53.000Z</published>
-    <updated>2019-03-17T09:46:02.343Z</updated>
+    <updated>2019-03-24T08:05:35.932Z</updated>
     
     <summary type="html">
     
@@ -47,7 +73,7 @@
     <link href="https://trycosmos.dev/2019/03/14/hello-cosmos/"/>
     <id>https://trycosmos.dev/2019/03/14/hello-cosmos/</id>
     <published>2019-03-14T15:24:07.000Z</published>
-    <updated>2019-03-17T09:45:52.764Z</updated>
+    <updated>2019-03-24T08:05:47.776Z</updated>
     
     <summary type="html">
     

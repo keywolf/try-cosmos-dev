@@ -18,19 +18,22 @@ ga('send', 'pageview');
 
 
   
-  <title>Try Cosmos</title>
+  <title>动手写条自己的链(2)：Cosmos SDK 入门 | Try Cosmos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Try Cosmos SDK &amp; Tendermint Core">
-<meta name="keywords" content="Cosmos, Cosmos SDK, Tendermint, Tendermint Core, Blockchain Development Tutorial">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Try Cosmos">
-<meta property="og:url" content="https://trycosmos.dev/index.html">
+  <meta name="description" content="动手写条自己的链 系列文章：  Hello Cosmos Cosmos 技术架构解析 Cosmos SDK 入门    本文主要是对官方文档进行翻译，如后续内容发生变化，请以英文原文为准。  目录 Cosmos SDK 介绍 Cosmos SDK 程序架构 状态机 Tendermint ABCI   Cosmos SDK 设计总览 BaseApp Multistore Modules   Cosm">
+<meta name="keywords" content="Try Cosmos,Cosmos SDK Docs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动手写条自己的链(2)：Cosmos SDK 入门">
+<meta property="og:url" content="https://trycosmos.dev/2019/03/24/cosmos-sdk-intro/index.html">
 <meta property="og:site_name" content="Try Cosmos">
-<meta property="og:description" content="Try Cosmos SDK &amp; Tendermint Core">
+<meta property="og:description" content="动手写条自己的链 系列文章：  Hello Cosmos Cosmos 技术架构解析 Cosmos SDK 入门    本文主要是对官方文档进行翻译，如后续内容发生变化，请以英文原文为准。  目录 Cosmos SDK 介绍 Cosmos SDK 程序架构 状态机 Tendermint ABCI   Cosmos SDK 设计总览 BaseApp Multistore Modules   Cosm">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://trycosmos.dev/images/cosmos-architecture-5.png">
+<meta property="og:updated_time" content="2019-03-24T14:12:15.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Try Cosmos">
-<meta name="twitter:description" content="Try Cosmos SDK &amp; Tendermint Core">
+<meta name="twitter:title" content="动手写条自己的链(2)：Cosmos SDK 入门">
+<meta name="twitter:description" content="动手写条自己的链 系列文章：  Hello Cosmos Cosmos 技术架构解析 Cosmos SDK 入门    本文主要是对官方文档进行翻译，如后续内容发生变化，请以英文原文为准。  目录 Cosmos SDK 介绍 Cosmos SDK 程序架构 状态机 Tendermint ABCI   Cosmos SDK 设计总览 BaseApp Multistore Modules   Cosm">
+<meta name="twitter:image" content="https://trycosmos.dev/images/cosmos-architecture-5.png">
 <meta name="twitter:creator" content="@B1u3W01f">
   
     <link rel="alternate" href="/atom.xml" title="Try Cosmos" type="application/atom+xml">
@@ -84,9 +87,7 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-cosmos-sdk-intro" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-cosmos-sdk-intro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/24/cosmos-sdk-intro/" class="article-date">
   <time datetime="2019-03-24T07:55:37.000Z" itemprop="datePublished">2019-03-24</time>
@@ -99,8 +100,8 @@ ga('send', 'pageview');
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/24/cosmos-sdk-intro/">动手写条自己的链(2)：Cosmos SDK 入门</a>
+    <h1 class="article-title" itemprop="name">
+      动手写条自己的链(2)：Cosmos SDK 入门
     </h1>
   
 
@@ -238,191 +239,19 @@ ga('send', 'pageview');
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-cosmos-architecture" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/16/cosmos-architecture/" class="article-date">
-  <time datetime="2019-03-16T08:59:53.000Z" itemprop="datePublished">2019-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/cosmos-architecture/">动手写条自己的链(1)：Cosmos 技术架构解析</a>
-    </h1>
+    <a href="/2019/03/16/cosmos-architecture/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">动手写条自己的链(1)：Cosmos 技术架构解析</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="/tags/Try-Cosmos/">动手写条自己的链</a> 系列文章：</p>
-<ol>
-<li><a href="/2019/03/14/hello-cosmos/">Hello Cosmos</a></li>
-<li><a href="/2019/03/16/cosmos-architecture/">Cosmos 技术架构解析</a></li>
-<li><a href="/2019/03/24/cosmos-sdk-intro/">Cosmos SDK 入门</a></li>
-</ol>
-<p>本文主要内容来自橙皮书《对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？》，稍作修改，原文链接见文末。</p>
-<p><a href="https://cosmos.network/">Cosmos</a> 在 3 月 14 日的早 7:00 <a href="https://cosmos.network/launch">成功启动了主网</a>，它是以伯克利的 <a href="https://tendermint.com/">Tendermint</a> 团队为核心团队开发的跨链项目，目标要实现两件事情：第一件，是让公链开发变得简单；第二件，是让所有的链能够连接起来。</p>
-<h2 id="Cosmos-的起源：Tendermint"><a href="#Cosmos-的起源：Tendermint" class="headerlink" title="Cosmos 的起源：Tendermint"></a>Cosmos 的起源：Tendermint</h2><p>在技术发展早期，人们对如何开发一个去中心化的公共账本并不会有太多的认识和思考。比特币和以太坊的设计就像一块单片电路板，上面所有的元件都集成在一起，其中的逻辑错综复杂，没有任何分层的技术栈可言。如果你写过代码的话就会知道，解耦是设计复杂系统的第一要义。只有把各个功能分开，把一个系统拆解成干净的层级、模块和接口，代码才能复用，以及更好的做修改，为未来留下灵活的扩展空间。</p>
-<p>比特币和以太坊就像一台整体焊死的电脑，你很难对他进行改动，里面的零件也没法拔出来做升级。当人们对公链有各种各样完全不同的想法之后，人们发现把所有东西都做在一条链上是不对的，于是很多人开始想开发自己的链。这个时候你会发现，即使比特币和以太坊开源了，你也很难进行代码的复用。除了把比特币代码拷过来，改个参数，换个名称，弄出来一个山寨币之外，做不了太多事情。</p>
-<p>在这样的背景下，有人就想，我能不能做一个工具，让大家使用这个工具能更好更快的开发自己的链呢？就好像组装电脑一样，键盘、鼠标、显示器、内存条，这些东西都是现成的、可独立拆卸的，一个不懂计算机原理的人也能像拼积木一样，组装各种各样不同性能的电脑。</p>
-<p>Cosmos —— 准确的说，是 Cosmos 里的 Tendermint，就这样诞生了。</p>
-<p>Tendermint 是 Cosmos 里面最重要的组成部分之一，它也是整个 Cosmos 生态的基础。要理解 Cosmos，需要先弄懂 Tendermint。</p>
-<p>简单的说，Tendermint 是一个通用的区块链开发框架。你可以借助这个框架，快速定制开发自己的链。</p>
-<p>不妨设想一下，如果让你来设计这样一套开发工具，你会怎么设计？很显然，第一步需要先把所有链都要用到的功能抽象出来。就像你要帮助别人组装一台电脑，需要先搞清电脑都有 CPU、内存以及显示器这些东西一样。</p>
-<p>那么问题来了，一条链的必要组成部分都包括哪些呢？</p>
-<p>Cosmos 团队认为可以这样划分：</p>
-<p><img src="/images/cosmos-architecture-1.jpg" alt></p>
-<ul>
-<li>网络层：用来确保，在一个点对点的网络里，每个节点都能接收和传输一笔交易；</li>
-<li>共识层：用来确保每个节点选出同一笔交易，这个交易将被允许对节点的状态进行修改。在比特币里面，所谓“状态”就是一系列账户的余额（虽然是 UTXO 模型，但为了简化理解，我们可以这样认为），矿工们就一笔交易达成共识，如果有效，这笔交易就会修改所有账户的余额；</li>
-<li>应用层：用来确保交易的处理。所谓“交易的处理”指的是：输入一笔交易和一个状态，这个应用就会返回一个新的状态。在以太坊上，应用层其实就是所谓的 EVM 虚拟机。所有的交易进入虚拟机，虚拟机会根据调用这笔交易的智能合约的指示来修改状态；</li>
-</ul>
-<p>Cosmos 团队认为，这个三层结构基本就可以概括一条链的所有东西了。同时，大部人想开发自己的链，其实都不太关心网络层和共识层，他们自己想定义的是应用层的东西，因为这层负责业务逻辑。</p>
-<p>所以，Tendermint 的目标就变成了：打造一个通用的网络层和共识层，让大家可以轻松在上面搭建自己的应用层，节省很多不必要的开发时间。</p>
-<p>Tendermint 包含两部分的东西：</p>
-<ul>
-<li>第一部分叫 Tendermint Core。这部分把共识层和网络层封装在了一起，变成一个通用引擎，这个引擎用来确保：交易按照一致性和安全性的原则被复制到各个节点的机器上。也就是说，相同的交易以相同的顺序被记录在链上；</li>
-<li>第二部分叫 ABCI 协议，<code>Application Blockchain Interface</code>。这部分是 Tendermint Core 引擎和上面开发者自定义的应用层之间的接口。通过这个接口，应用层可以和底下的共识层和网络层进行通信对话。ABCI 协议的特点，是让一笔交易可以被不同编程语言和任何编程环境下的应用处理。</li>
-</ul>
-<p>接下来，我们详细看看这两部分的东西。</p>
-<h2 id="Tendermint-Core"><a href="#Tendermint-Core" class="headerlink" title="Tendermint Core"></a>Tendermint Core</h2><p><a href="https://github.com/tendermint/tendermint">GitHub</a></p>
-<p><a href="https://tendermint.com/ecosystem">Tendermint Ecosystem</a></p>
-<p>Tendermint Core 包括网络层和共识层：网络层方面使用的是 gossip 协议，这块不重要，我们重点来看看共识层。</p>
-<p>共识方面，Tendermint 使用的是拜占庭共识算法 + POS。</p>
-<p>拜占庭算法是一类解决共识的算法，它要求网络里的验证节点一轮一轮地进行广播和投票，最终达成整个网络的一致性，以此来抵消节点离线、网络通信延迟、恶意节点捣乱等问题。拜占庭算法需要至少 2/3 的节点是诚实节点，在 Tendermint 里面，这个 2/3 的节点不是指的节点的数量，而是指的节点所拥有的权益，也就是“钱”的数量。</p>
-<p>此外大家都知道，拜占庭共识算法比如 PBFT，是要求验证节点必须是事先预设的一组固定的节点，但在 Tendermint 里，验证节点可以动态变化，只不过这个动态没法像比特币 POW 那么灵活，你想加入就可以加入，想退出就可以退出。每次 Tendermint 增加或者退出一组验证节点，都需要经过至少 2/3 的节点的投票才能决定。</p>
-<p>最后，如果验证节点太多的话，形成共识的时间是会变慢的。所以，Tendermint 在创世的时候把节点数设定为 100 个。在这 100 个验证节点之外，其他的用户则可以使用轻节点来访问网络。根据他们的计划，这 100 个节点数会按每年 13% 的速度增加，10 年后稳定为 300 个节点。那么，100 个节点对去中心化到底有没有什么影响？这个问题属于见仁见智了。Cosmos 认为是没问题的，他们的白皮书里有这样一组数据：</p>
-<blockquote>
-<p>64 个节点，横跨 5 个大洲，7 个数据中心，使用商用的云计算实例，可以提供超高的处理性能，每秒钟处理上千笔交易，延迟在 1-2 秒之间。而且这种性能是在严苛的敌手假设里也能够成立的，哪怕系统里有恶意节点故意投票作弊，也能保证一定的容错性。</p>
-</blockquote>
-<p>可以看到，Tendermint 的好处体现在性能、安全这些方面。除此之外，Tendermint 的另一个优点在于它不会分叉，因为 POS 拜占庭共识算法都是出块后就立即达成最终确定性的。</p>
-<h2 id="ABCI-协议"><a href="#ABCI-协议" class="headerlink" title="ABCI 协议"></a>ABCI 协议</h2><p><a href="https://github.com/tendermint/tendermint/tree/master/abci">GitHub</a></p>
-<p>有了 Tendermint Core 这个神器，你就可以在上面搭建各种各样的链了，不管是公链、联盟链还是私有链。</p>
-<p>之所以能做到这一点，是因为 Tendermint Core 是不知道上面应用层具体是什么样的，它不关心应用层的实现。Tendermint 把许多无关的细节都忽略了，只抽象出关键的东西，做成通用的接口。这个接口就叫 ABCI 协议，<strong>用来连接应用层和 Tendermint Core 之间的通信</strong>。</p>
-<p><img src="/images/cosmos-architecture-2.jpg" alt></p>
-<p>ABCI 协议是一个 Socket 协议，不管你使用哪一种编程语言、运行在什么样的编程环境下，只要你符合这个协议的标准，应用层和 Tendermint Core 就能通信。Cosmos 官方已经实现了一个 ABCI 协议的版本，名叫 Tendermint Socket Protocol (TSP, or Teaspoon)，当然你也可以实现自己的版本。</p>
-<p>ABCI 协议包括几种不同的消息类型。Tendermint Core 会创建 3 个 ABCI 连接到应用层：</p>
-<ul>
-<li>一个用于内存池中广播交易的验证；</li>
-<li>一个用于共识引擎运行，用于新的区块的提议；</li>
-<li>最后一个用来查询应用层的状态；</li>
-</ul>
-<p>以太坊的 Solidity ，以及 Java、C++、Python、Go 这些语言都可以用来写出确定性的区块链交易处理逻辑。需要注意的是，区块的处理必须是即时确定的，不能是像比特币 POW 那种概率性确定，否则 Tendermint Core 达不成共识。POS 和 POA（Proof of Authority）共识算法都是即时确定的。</p>
-<h2 id="Cosmos-SDK"><a href="#Cosmos-SDK" class="headerlink" title="Cosmos SDK"></a>Cosmos SDK</h2><p><img src="/images/cosmos-architecture-5.png" alt></p>
-<p><a href="https://github.com/cosmos/cosmos-sdk/">GitHub</a></p>
-<p><a href="https://cosmos.network/ecosystem">Cosmos Ecosystem</a></p>
-<p>到这一步，Cosmos 把开发一条公链的工作减少为设计一个应用层的工作。但 Cosmos 并没有就此打住，它继续「切分」应用层。</p>
-<p>应用层需要实现一系列的功能来完成最终的业务逻辑，不过这些功能中有很多是可以通用的，比如账户管理的功能，Cosmos 把这些功能分解出来，再以模块化的方式加以实现。</p>
-<p>这样一来，开发者在进行应用层开发时，只需要实现自身业务逻辑中特殊的功能，其他的功能都可以直接调用 Cosmos 的功能模块。</p>
-<p><img src="/images/cosmos-architecture-3.jpg" alt></p>
-<p>如上图所示，Accounts（账户系统）、Governance（治理机制）、Staking（抵押机制）、Slashing（惩罚机制）、IBC（跨链功能）、Rewards&amp;Fees（奖励&amp;手续费）等均是功能模块，能够以「插拔」的方式被组合到一起使用。</p>
-<p>Cosmos 把自己提供的这一模块化开发工具叫做「Cosmos SDK」，它覆盖了应用层需要实现的大部分的功能，到这一步，Cosmos 把设计一个应用层的工作减少为实现少数具体的功能模块的工作。Cosmos 团队自己也利用这套 SDK 实现了一个例子叫 Cosmos Hub。</p>
-<p><img src="/images/cosmos-architecture-4.png" alt></p>
-<p>最终，如上图所示，通过对公链的分层设计以及对应用层的分模块设计，开发者能够以 Tendermint 共识引擎和 Cosmos SDK 开发工具为基础，快速地完成公链的开发。他们不再需要设计整条公链，而只需要实现核心的业务功能。</p>
-<p>正因为这样，币安可以在较短的时间内迅速基于 Cosmos 的开发工具和共识引擎，开发完成应用方向非常聚焦的 <a href="https://github.com/binance-chain">Binance Chain</a>。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>总结来说，Cosmos 希望通过 Cosmos SDK 和 Tendermint 等工具，让开发者以一种模块化、标准化、可插拔的方式（这种方式其实也是现代软件开发积累下来的大量成熟的开发技术经验），快速降低一条链的开发成本。让每个人都可以轻松拥有自己的链之后，Cosmos 再通过 IBC 跨链协议和 Cosmos Hub 与 Zone 所组成的生态系统，为这些不同的链提供互相连接的能力，最终组成一个大网络。</p>
-<p>Cosmos 认为，现在大多数开发者倾向于在以太坊上开发智能合约，而不愿意开发自己的链，主要是因为开发一条链的难度太高了。但随着 Cosmos SDK 和 Tendermint 的普及，开发一条链的成本会变的像开发一个智能合约一样简单。</p>
-<p>最后，Cosmos 关于区块链和生态的理解非常有意思，Cosmos 团队坚信「每个人都应该拥有一条链」，想知道为什么吗？推荐阅读下面橙皮书的文章，在末尾有橙皮书和 Cosmos 创始人 Jae Kwon 及核心技术开发团队进行的访谈。</p>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
-<li>橙皮书 <a href="https://orange.xyz/p/210">对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？</a></li>
-<li>李画 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/16/cosmos-architecture/" data-id="cjtmmz9hz000998ceh8jsuugs" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cosmos-Architecture/">Cosmos Architecture</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-cosmos" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/14/hello-cosmos/" class="article-date">
-  <time datetime="2019-03-14T15:24:07.000Z" itemprop="datePublished">2019-03-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/14/hello-cosmos/">Hello Cosmos</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="/tags/Try-Cosmos/">动手写条自己的链</a> 系列文章：</p>
-<ol>
-<li><a href="/2019/03/14/hello-cosmos/">Hello Cosmos</a></li>
-<li><a href="/2019/03/16/cosmos-architecture/">Cosmos 技术架构解析</a></li>
-<li><a href="/2019/03/24/cosmos-sdk-intro/">Cosmos SDK 入门</a></li>
-</ol>
-<p>据链闻消息，北京时间 3 月 14 日早间，跨链项目 Cosmos 正式启动主网。Cosmos 主网是指由 Cosmos 团队自己开发的第一个官方版 Hub，也就是不同链进行跨链操作时的第一个中央枢纽。随着该主网的上线，Cosmos 的跨链生态将从理论阶段进入到实现阶段。在 3 月 1 日，中国的边界智能团队开发的 Cosmos 网络中另一个 Hub 「IRISnet」已经正式启动了主网。目前，随着 Cosmos 主网正式启动，Cosmos Hub 和 IRISnet Hub 将完成 Cosmos 跨链生态中的双 Hub 链接。</p>
-<h2 id="0x00-What-is-Cosmos"><a href="#0x00-What-is-Cosmos" class="headerlink" title="0x00 What is Cosmos"></a>0x00 What is Cosmos</h2><p><a href="https://cosmos.network/intro">官方介绍</a> 调皮一下：「cosmos」这个单词的本意是「宇宙」的意思 :)</p>
-<p><a href="https://cosmos.network/resources/whitepaper">Cosmos Whitepaper</a></p>
-<p><a href="https://cosmos.network/resources/whitepaper/zh-CN">Cosmos 中文版白皮书</a></p>
-<h2 id="0x01-科普"><a href="#0x01-科普" class="headerlink" title="0x01 科普"></a>0x01 科普</h2><ul>
-<li>2019/03/14 <a href="https://mp.weixin.qq.com/s/nanT6NVwJDnTz9ET_WWDHg">软硬核：彻底读懂 Cosmos 如何一键发链与万链互联</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/AmyCTCu6u_3fEgRD2RlxsQ">Cosmos 的前世今生、未来前景和投资价值</a></li>
-<li>2019/03/13 <a href="https://mp.weixin.qq.com/s/bViNUPfOErxD5jNU7NDTMg">写在跨链项目Cosmos上线前夜</a></li>
-<li>2018/10/10 <a href="https://orange.xyz/p/210">对话 Cosmos：未来是所有人都用一条公链，还是每个人都有自己的链？</a></li>
-</ul>
-<h2 id="0x02-Coding"><a href="#0x02-Coding" class="headerlink" title="0x02 Coding"></a>0x02 Coding</h2><ul>
-<li><a href="https://cosmos.network/developers">Cosmos Developer Portal</a></li>
-<li><a href="https://cosmos.network/docs/">Cosmos SDK Documentation</a></li>
-<li><a href="https://github.com/cosmos/cosmos-sdk/">Cosmos SDK GitHub</a></li>
-<li><a href="https://tendermint.com/docs/">Tendermint Core Documentation</a></li>
-<li><a href="https://github.com/tendermint/tendermint">Tendermint Core GitHub</a></li>
-<li><a href="https://github.com/tendermint/tendermint/tree/master/abci">ABCI GitHub</a></li>
-</ul>
-<h2 id="0x03-应用"><a href="#0x03-应用" class="headerlink" title="0x03 应用"></a>0x03 应用</h2><ul>
-<li>IRISnet：其对 Cosmos SDK 和 IBC 进行了扩展，用以支持公链、联盟链以及传统商业系统之间的集成，使得数据和复杂计算能够跨异构网络互联互通，实现服务的跨链调用</li>
-<li>Binance Chain：币安链，是 Cosmos 上的第一个去中心化交易所平台</li>
-<li>IOV：基于 Cosmos 的第一个分布式区块链 DNS</li>
-<li>Kava：基于 Cosmos 的第一个跨链钱包协议提供者</li>
-<li>其他更多请查看 <a href="https://cosmos.network/ecosystem">Cosmos Ecosystem</a>、<a href="https://tendermint.com/ecosystem">Tendermint Ecosystem</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://trycosmos.dev/2019/03/14/hello-cosmos/" data-id="cjtmmz9gw000098cez3pia49m" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Try-Cosmos/">Try Cosmos</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
